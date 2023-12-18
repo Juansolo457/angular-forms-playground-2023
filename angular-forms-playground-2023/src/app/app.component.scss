@@ -1,0 +1,63 @@
+.form-container {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  box-sizing: border-box;
+
+  .row {
+    display: flex;
+    width: 100%;
+
+    .column {
+      width: 238px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      margin-left: -1px; // Overlap the borders between columns
+      &:first-child {
+        margin-left: 0; // The first column should not have a negative margin
+      }
+
+      &:hover,
+      &:focus-within {
+        z-index: 2; // Bring the column border to the top on hover/focus
+        position: relative;
+        border: 1px solid #ff6347; // Red border on hover/focus
+      }
+
+      input[type="text"] { // specific selector to get all input types that are 'text'
+        width: 100%; // Full width of the parent .column
+        height: 72px; // Specific height for the inputs
+        padding: 8px; // Padding inside the input
+        border: none; // No border for the input
+        box-sizing: border-box; // Include padding and border in the width and height
+        background: none;
+
+        &:focus {
+          outline: none; // Remove default focus outline
+        }
+      }
+    }
+  }
+}
+
+/* New full-width input field styling */
+.full-width-input {
+  border: 1px solid #ccc; /* Standard border for the input */
+  margin-top: -1px; /* Align the top border with the bottom border of the elements above */
+  box-sizing: border-box; /* Include padding and border in the width */
+
+  input[type="text"] {
+    width: 100%; /* Full width of the parent */
+    height: 72px; /* Match the height of the other input fields */
+    padding: 8px; /* Standard padding */
+    border: none; /* Remove individual border */
+    box-sizing: border-box; /* Include padding and border in the width and height */
+
+    &:hover,
+    &:focus {
+      outline: none; /* Remove default focus outline */
+      border: 1px solid #ff6347; /* Red border on hover and focus */
+    }
+  }
+}
