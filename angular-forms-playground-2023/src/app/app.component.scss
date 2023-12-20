@@ -10,31 +10,32 @@
     width: 100%;
 
     .column {
-      width: 238px;
+      width: calc(50% - 1px); /* Adjust the width to account for the border */
       border: 1px solid #ccc;
       box-sizing: border-box;
-      margin-left: -1px; // Overlap the borders between columns
+      margin-left: -1px; /* Overlap the borders between columns */
+
       &:first-child {
-        margin-left: 0; // The first column should not have a negative margin
+        margin-left: 0; /* The first column should not have a negative margin */
       }
 
       &:hover,
       &:focus-within {
-        z-index: 2; // Bring the column border to the top on hover/focus
+        z-index: 2; /* Bring the column border to the top on hover/focus */
         position: relative;
-        border: 1px solid #ff6347; // Red border on hover/focus
+        border: 1px solid #ff6347; /* Red border on hover/focus */
       }
 
-      input[type="text"] { // specific selector to get all input types that are 'text'
-        width: 100%; // Full width of the parent .column
-        height: 72px; // Specific height for the inputs
-        padding: 8px; // Padding inside the input
-        border: none; // No border for the input
-        box-sizing: border-box; // Include padding and border in the width and height
+      input[type="text"] {
+        width: 100%; /* Full width of the parent .column */
+        height: 72px; /* Specific height for the inputs */
+        padding: 8px; /* Padding inside the input */
+        border: none; /* No border for the input */
+        box-sizing: border-box; /* Include padding and border in the width and height */
         background: none;
 
         &:focus {
-          outline: none; // Remove default focus outline
+          outline: none; /* Remove default focus outline */
         }
       }
     }
