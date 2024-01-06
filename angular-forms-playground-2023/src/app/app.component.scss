@@ -3,7 +3,6 @@ $border-color: #ccc;
 $hover-focus-border-color: #ff6347;
 $input-height: 72px;
 $input-padding: 8px;
-
 // Define mixins for repeated styles
 @mixin box-sizing-border-box {
   box-sizing: border-box;
@@ -15,7 +14,6 @@ $input-padding: 8px;
   padding: $input-padding;
   border: none;
   @include box-sizing-border-box;
-
   &:focus {
     outline: none;
   }
@@ -27,6 +25,10 @@ $input-padding: 8px;
     outline: none;
     border: 1px solid $hover-focus-border-color;
   }
+}
+
+.input-style {
+  @include input-style;
 }
 
 .form-container {
@@ -62,7 +64,7 @@ $input-padding: 8px;
     }
 
     input[type="text"] {
-      @include input-style;
+      @extend .input-style;
     }
   }
 }
@@ -72,7 +74,7 @@ $input-padding: 8px;
   @include box-sizing-border-box;
 
   input[type="text"] {
-    @include input-style;
+    @extend .input-style;
     @include hover-focus-border;
   }
 }
@@ -87,7 +89,7 @@ $input-padding: 8px;
 
   input[type="text"] {
     flex: 1;
-    @include input-style;
+    @extend .input-style;
 
     &:first-child {
       border-right: 1px solid $border-color;
